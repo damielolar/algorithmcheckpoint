@@ -1,0 +1,44 @@
+function analyzeSentence(sentence) {
+  // Initialize counters
+  let sentenceLength = 0;
+  let wordCount = 0;
+  let vowelCount = 0;
+
+  // Iterate through each character in the sentence
+  for (let i = 0; i < sentence.length; i++) {
+    // Increment the sentence length counter
+    sentenceLength++;
+
+    // Check if the current character is a space, indicating a word boundary
+    if (sentence[i] === ' ') {
+      // Increment the word count counter
+      wordCount++;
+    }
+
+    // Check if the current character is a vowel (case-insensitive)
+    if (
+    sentence[i].toLowerCase() === 'a' ||
+    sentence[i].toLowerCase() === 'e' ||
+    sentence[i].toLowerCase() === 'i' ||
+    sentence[i].toLowerCase() === 'o' ||
+    
+    sentence[i].toLowerCase() === 'u'
+    ) {
+      // Increment the vowel count counter
+    vowelCount++;
+    }
+    }
+
+  // The last character is a period, so it is not part of a word
+  // Increment the word count counter to include the last word
+    wordCount++;
+
+  // Output the results
+    console.log('Sentence Length:', sentenceLength);
+    console.log('Number of Words:', wordCount);
+    console.log('Number of Vowels:', vowelCount);
+}
+
+// Example usage
+const inputSentence = 'This is a sample sentence.';
+analyzeSentence(inputSentence);
